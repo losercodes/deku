@@ -1,0 +1,493 @@
+@import 'https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap';
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+html {
+	font-size: 10px;
+	font-family: 'Montserrat', sans-serif;
+	scroll-behavior: smooth;
+}
+a {
+	text-decoration: none;
+}
+.container {
+	min-height: 100vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+p {
+	color: black;
+	font-size: 1.4rem;
+	margin-top: 5px;
+	line-height: 2.5rem;
+	font-weight: 300;
+	letter-spacing: 0.05rem;
+}
+.section-title {
+	font-size: 4rem;
+	font-weight: 300;
+	color: black;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	letter-spacing: 0.2rem;
+	text-align: center;
+}
+.section-title span {
+	color: rgb(176, 176, 176);
+}
+
+.cta {
+	display: inline-block;
+	padding: 10px 30px;
+	color: white;
+	background-color: transparent;
+	border: 2px solid rgb(170, 165, 166);
+	font-size: 2rem;
+	text-transform: uppercase;
+	letter-spacing: 0.1rem;
+	margin-top: 30px;
+	transition: 0.3s ease;
+	transition-property: background-color, color;
+
+}
+.cta{
+	text-align: center;
+}
+.cta:hover {
+	color: white;
+	background-color: rgb(171, 171, 171);
+}
+.brand h1 {
+	font-size: 3rem;
+	text-transform: uppercase;
+	color: white;
+}
+.brand h1 span {
+	color: rgb(146, 146, 146);
+}
+
+/* Header section */
+#header {
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: auto;
+
+}
+.marquee {
+  position: absolute;
+  white-space: nowrap;
+  animation: leftToRight 8s linear infinite;
+  font-size: 30px;
+}
+
+@keyframes leftToRight {
+  0% {left: 0%;}
+  100% {left: 100%;}
+}
+.floating-text {
+  position: absolute;
+  left: 0;
+  font-size: 2em; /* Adjust size as needed */
+  font-weight: bold; /* Makes the text bold */
+  white-space: nowrap; /* Prevents the text from wrapping to the next line */
+  overflow: hidden; /* Hides the portion of the text that overflows the container */
+  animation: floatText 5s linear infinite;
+  color: darkgray;
+}
+
+@keyframes floatText {
+  0% { 
+    left: 0; 
+    transform: translateX(0); /* Starts the text from its original position */
+  }
+  100% { 
+    left: 100%;
+    transform: translateX(-100%); /* Moves the text to the left by its own width after reaching the right end */
+  }
+}
+
+#header .header {
+	min-height: 8vh;
+	background-color: rgba(31, 30, 30, 0.24);
+	transition: 0.3s ease background-color;
+}
+#header .nav-bar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	height: 100%;
+	max-width: 1300px;
+	padding: 0 10px;
+}
+/* End Header section */
+
+/* Hero Section */
+#hero {
+	background-image: url('Background.jpg'); 
+	background-size: cover;
+	background-position: top center;
+	position: relative;
+	z-index: 1;
+
+}
+#hero::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-color: black;
+	opacity: 0.7;
+	z-index: -1;
+}
+#hero .hero {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 50px;
+	justify-content: flex-start;
+}
+#hero h1 {
+	display: block;
+	width: fit-content;
+	font-size: 4rem;
+	position: relative;
+	color: transparent;
+	animation: text_reveal 0.5s ease forwards;
+	animation-delay: 1s;
+}
+#hero h1:nth-child(1) {
+	animation-delay: 1s;
+}
+#hero h1:nth-child(2) {
+	animation-delay: 2s;
+}
+#hero h1:nth-child(3) {
+	animation: text_reveal_name 0.5s ease forwards;
+	animation-delay: 3s;
+}
+#hero h1 span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 0;
+	background-color: rgb(145, 145, 145);
+	animation: text_reveal_box 1s ease;
+	animation-delay: 0.5s;
+}
+#hero h1:nth-child(1) span {
+	animation-delay: 0.5s;
+}
+#hero h1:nth-child(2) span {
+	animation-delay: 1.5s;
+}
+#hero h1:nth-child(3) span {
+	animation-delay: 2.5s;
+}
+
+/* End Hero Section */
+
+
+/* Projects section */
+
+.ProjectSection {
+	padding-top: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	font-family: sans-serif;
+  }
+  .section-title{
+	padding-bottom: 30px;
+  }
+  h1 {
+	padding-top: 20px;
+	color: coral;
+  }
+  .grid-container {
+	columns: 5 200px;
+	column-gap: 1.5rem;
+	width: 90%;
+	margin: 0 auto;
+	div {
+	  width: 150px;
+	  margin: 0 1.5rem 1.5rem 0;
+	  display: inline-block;
+	  width: 100%;
+	  border: solid 2px black;
+	  padding: 5px;
+	  box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+	  border-radius: 5px;
+	  transition: all .25s ease-in-out;
+	  &:hover img {
+		filter: grayscale(0);
+	  }
+	  &:hover {
+		border-color: coral;
+	  }
+	  img {
+		width: 100%;
+		filter: grayscale(100%);
+		border-radius: 5px;
+		transition: all .25s ease-in-out;
+	  }
+	  p {
+		margin: 5px 0;
+		padding: 0;
+		text-align: center;
+		font-style: italic;
+	  }
+	}
+  }  
+
+/* End Projects section */
+
+/* ThankYou Section */
+
+
+  #ThankYou .ThankYou {
+	display: flex;
+	flex-direction: column-reverse;
+	text-align: center;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 100px 20px;
+}
+#ThankYou .col-left {
+	width: 250px;
+	height: 360px;
+}
+
+
+#ThankYou .col-right {
+	width: 100%;
+	display: grid;
+	text-align: center;
+	
+}
+
+
+#ThankYou .col-right h2 {
+	font-size: 1.8rem;
+	font-weight: 500;
+	letter-spacing: 0.2rem;
+	margin-bottom: 10px;
+}
+#ThankYou .col-right p {
+	margin-bottom: 20px;
+}
+#ThankYou .col-right .cta {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 251px;
+	border-radius: .3rem;
+	color: black;
+	margin-bottom: 50px;
+	padding: 10px 20px;
+	font-size: 2rem;
+	text-align: center;
+}
+
+#ThankYou .col-left .ThankYou-img {
+	height: 400px;
+	width: 330px;
+	position: relative;
+	border: 10px solid white;
+}
+
+.ThankYou-img #images{
+	height: 300px;
+	width: 290px;
+	position: relative;
+	overflow: hidden;
+}
+
+
+#ThankYou .col-left .ThankYou-img::after {
+	content: '';
+	position: absolute;
+	left: -33px;
+	top: 19px;
+	height: 420px;
+	width: 350px;
+	border: 7px solid crimson;
+	z-index: -1;
+} 
+
+
+/* End ThankYou Section  */
+
+ /* new section  */
+
+ .ThankYou {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+}
+
+.ThankYou-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.thank-you {
+    text-align: center;
+    padding: 40px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.thank-you:hover {
+    transform: scale(1.05);
+}
+
+.thank-you h1 {
+    color: #e44d26;
+}
+
+.thank-you p {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.heart {
+    width: 50px;
+    height: 50px;
+    background-color: #e44d26;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    margin: 0 auto;
+    transform: translateY(10px);
+    transition: transform 0.3s ease-in-out;
+}
+
+.thank-you:hover .heart {
+    transform: translateY(-10px);
+}
+
+ /* end new section  */
+
+
+/* Footer */
+#footer {
+	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+}
+#footer .footer {
+	min-height: 100px;
+	flex-direction: column;
+	padding-top: 20px;
+	padding-bottom: 10px;
+}
+#footer h2 {
+	color: white;
+	font-weight: 500;
+	font-size: 1.8rem;
+	letter-spacing: 0.1rem;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#footer p {
+	color: white;
+	font-size: 1.3rem;
+}
+
+
+
+/* End Footer */
+
+/* Keyframes */
+@keyframes hamburger_puls {
+	0% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+		transform: scale(1.4);
+	}
+}
+@keyframes text_reveal_box {
+	50% {
+		width: 100%;
+		left: 0;
+	}
+	100% {
+		width: 0;
+		left: 100%;
+	}
+}
+@keyframes text_reveal {
+	100% {
+		color: white;
+	}
+}
+@keyframes text_reveal_name {
+	100% {
+		color: crimson;
+		font-weight: 500;
+	}
+}
+/* End Keyframes */
+
+/* Media Query For Tablet */
+@media only screen and (min-width: 768px) {
+	.cta {
+		font-size: 2.5rem;
+		padding: 20px 60px;
+	}
+	h1.section-title {
+		font-size: 6rem;
+	}
+
+	/* Hero */
+	#hero h1 {
+		font-size: 7rem;
+	}
+	/* End Hero */
+
+	
+	/* ThankYou */
+
+	/* #ThankYou .col-left {
+		width: 600px;
+		height: 400px;
+		padding-left: 60px; */
+	}
+	/* #ThankYou .about-img::after {
+		left: -45px;
+		top: 34px;
+		height: 98%;
+		width: 98%;
+		border: 10px solid crimson;
+	} */
+	#ThankYou .col-right {
+		text-align: left;
+		padding: 30px;
+	}
+	#ThankYou .col-right h1 {
+		text-align: center;
+	}
+	/* End ThankYou */
+
+
+/* End Media Query For Tablet */
